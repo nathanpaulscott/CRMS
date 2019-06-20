@@ -79,14 +79,11 @@ Functionality
 -------------------
 This will describe the tool functionality
 
-NOTE: having a quick look at the tool, it looks very complex and nasty => esspecially the stuff with columns in XL.
-But basically, it regularly connects to the email server, downloads any emails and deletes them on the email server.
+The app regularly connects to the email server, downloads any emails and deletes them on the email server.
 Then it goes through each email and reads the subject and body.  From that it will decide what to do.
 The code for each different action is inside one sub, which is probably a bad idea, as it makes it hard to debug.
-The xl processing module is separate and made of various functions, again, thie is really the messy part.
+The xl processing module is separate and made of various functions, again, this is really a messy part.
 The XL part opens the xl forms, checks them, copies the data to the DB and performs and XL formatting for the next section
 There is a periodic action module to run periodic tasks, this is ok
 
-To be honest, the tool is so complex that I could not bare to get back into it again, it is too engulfing, unless I have a purpose, I would not bother with it.
-
-I guess there are a lot of good pieces in there, but I really have no motivation to get into it to point of being able to understand it all and debug it.
+To be honest, the tool is so complex, it needs to be re-written in something easy like python with a more modular structure.  I think it served it's purpose as a proof of concept tool, it was used for almost 3 months by Huawei-Telkomsel and it forced Huawei to finally give the project one of their professional change management tools for free, which was the reason we coded this in the first place, as there was an unfulfulled need.
