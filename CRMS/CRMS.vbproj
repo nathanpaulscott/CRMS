@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90261737-BE15-434E-8BAD-82843C84C322}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CRMS.My.MyApplication</StartupObject>
+    <RootNamespace>CRMS</RootNamespace>
+    <AssemblyName>CRMS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>158</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CRMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CRMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5E4054AE84968F238C6CBB6450A3E4C954B8DF7B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CRMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CRMS_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Apis, Version=1.9.1.12395, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.9.1\lib\net40\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.9.1.12395, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.1\lib\net40\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.9.1.12399, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.1\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.9.1.12394, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.9.1\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v2, Version=1.9.0.173, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v2.1.9.0.1730\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Drive.v2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.9.1.12397, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.9.1\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImapX">
+      <HintPath>..\..\..\1a.accessing EMAIL\ImapX 2.0.0.16 Binaries\v4.0 client\ImapX.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF5, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenPop">
+      <HintPath>..\..\..\..\1a.accessing EMAIL\OpenPop.NET 2.0.5\binaries\unsigned\OpenPop.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress">
+      <HintPath>..\..\..\..\dll to unrar files\Full\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Net">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Zlib.Portable, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.1.10.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="ADODB" />
+    <Import Include="CRMS" />
+    <Import Include="ExcelClientPkgLib" />
+    <Import Include="Google" />
+    <Import Include="Google.Apis" />
+    <Import Include="Google.Apis.Auth" />
+    <Import Include="Google.Apis.Auth.OAuth2" />
+    <Import Include="Google.Apis.Auth.OAuth2.Flows" />
+    <Import Include="Google.Apis.Auth.OAuth2.Requests" />
+    <Import Include="Google.Apis.Auth.OAuth2.Responses" />
+    <Import Include="Google.Apis.Auth.OAuth2.Web" />
+    <Import Include="Google.Apis.Discovery" />
+    <Import Include="Google.Apis.Download" />
+    <Import Include="Google.Apis.Drive" />
+    <Import Include="Google.Apis.Drive.v2" />
+    <Import Include="Google.Apis.Drive.v2.Data" />
+    <Import Include="Google.Apis.Http" />
+    <Import Include="Google.Apis.Json" />
+    <Import Include="Google.Apis.Logging" />
+    <Import Include="Google.Apis.Requests" />
+    <Import Include="Google.Apis.Requests.Parameters" />
+    <Import Include="Google.Apis.Services" />
+    <Import Include="Google.Apis.Testing" />
+    <Import Include="Google.Apis.Upload" />
+    <Import Include="Google.Apis.Util" />
+    <Import Include="Google.Apis.Util.Store" />
+    <Import Include="ImapX" />
+    <Import Include="ImapX.Authentication" />
+    <Import Include="ImapX.Collections" />
+    <Import Include="ImapX.Constants" />
+    <Import Include="ImapX.EncodingHelpers" />
+    <Import Include="ImapX.Enums" />
+    <Import Include="ImapX.Exceptions" />
+    <Import Include="ImapX.Extensions" />
+    <Import Include="ImapX.Flags" />
+    <Import Include="ImapX.Parsing" />
+    <Import Include="Microsoft" />
+    <Import Include="Microsoft.Office" />
+    <Import Include="Microsoft.Office.Core" />
+    <Import Include="Microsoft.Office.Interop" />
+    <Import Include="Microsoft.Office.Interop.Excel" />
+    <Import Include="Microsoft.Vbe" />
+    <Import Include="Microsoft.Vbe.Interop" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.ApplicationServices" />
+    <Import Include="Microsoft.VisualBasic.CompilerServices" />
+    <Import Include="Microsoft.VisualBasic.Devices" />
+    <Import Include="Microsoft.VisualBasic.FileIO" />
+    <Import Include="Microsoft.Win32" />
+    <Import Include="Microsoft.Win32.SafeHandles" />
+    <Import Include="MySql" />
+    <Import Include="MySql.Data" />
+    <Import Include="MySql.Data.Entity" />
+    <Import Include="MySql.Data.MySqlClient" />
+    <Import Include="MySql.Data.MySqlClient.Authentication" />
+    <Import Include="MySql.Data.MySqlClient.Memcached" />
+    <Import Include="MySql.Data.MySqlClient.Properties" />
+    <Import Include="MySql.Data.MySqlClient.Replication" />
+    <Import Include="MySql.Data.Types" />
+    <Import Include="MySql.Web" />
+    <Import Include="MySql.Web.Common" />
+    <Import Include="MySql.Web.Profile" />
+    <Import Include="MySql.Web.Properties" />
+    <Import Include="MySql.Web.Security" />
+    <Import Include="MySql.Web.SessionState" />
+    <Import Include="Newtonsoft" />
+    <Import Include="Newtonsoft.Json" />
+    <Import Include="Newtonsoft.Json.Bson" />
+    <Import Include="Newtonsoft.Json.Converters" />
+    <Import Include="Newtonsoft.Json.Linq" />
+    <Import Include="Newtonsoft.Json.Schema" />
+    <Import Include="Newtonsoft.Json.Serialization" />
+    <Import Include="OpenPop" />
+    <Import Include="OpenPop.Common" />
+    <Import Include="OpenPop.Common.Logging" />
+    <Import Include="OpenPop.Mime" />
+    <Import Include="OpenPop.Mime.Decode" />
+    <Import Include="OpenPop.Mime.Header" />
+    <Import Include="OpenPop.Mime.Traverse" />
+    <Import Include="OpenPop.Pop3" />
+    <Import Include="OpenPop.Pop3.Exceptions" />
+    <Import Include="SharpCompress" />
+    <Import Include="SharpCompress.Archive" />
+    <Import Include="SharpCompress.Archive.GZip" />
+    <Import Include="SharpCompress.Archive.Rar" />
+    <Import Include="SharpCompress.Archive.SevenZip" />
+    <Import Include="SharpCompress.Archive.Tar" />
+    <Import Include="SharpCompress.Archive.Zip" />
+    <Import Include="SharpCompress.Common" />
+    <Import Include="SharpCompress.Common.GZip" />
+    <Import Include="SharpCompress.Common.Rar" />
+    <Import Include="SharpCompress.Common.SevenZip" />
+    <Import Include="SharpCompress.Common.Tar" />
+    <Import Include="SharpCompress.Common.Zip" />
+    <Import Include="SharpCompress.Compressor" />
+    <Import Include="SharpCompress.Compressor.BZip2" />
+    <Import Include="SharpCompress.Compressor.Deflate" />
+    <Import Include="SharpCompress.Compressor.LZMA" />
+    <Import Include="SharpCompress.Compressor.PPMd" />
+    <Import Include="SharpCompress.Reader" />
+    <Import Include="SharpCompress.Reader.GZip" />
+    <Import Include="SharpCompress.Reader.Rar" />
+    <Import Include="SharpCompress.Reader.Tar" />
+    <Import Include="SharpCompress.Reader.Zip" />
+    <Import Include="SharpCompress.Writer" />
+    <Import Include="SharpCompress.Writer.GZip" />
+    <Import Include="SharpCompress.Writer.Tar" />
+    <Import Include="SharpCompress.Writer.Zip" />
+    <Import Include="Shell32" />
+    <Import Include="System" />
+    <Import Include="System.CodeDom" />
+    <Import Include="System.CodeDom.Compiler" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Concurrent" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Collections.ObjectModel" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.ComponentModel.Design" />
+    <Import Include="System.ComponentModel.Design.Serialization" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Configuration.Assemblies" />
+    <Import Include="System.Data" />
+    <Import Include="System.Data.Common" />
+    <Import Include="System.Data.Linq" />
+    <Import Include="System.Data.Linq.Mapping" />
+    <Import Include="System.Data.Linq.SqlClient" />
+    <Import Include="System.Data.Linq.SqlClient.Implementation" />
+    <Import Include="System.Data.Odbc" />
+    <Import Include="System.Data.OleDb" />
+    <Import Include="System.Data.Sql" />
+    <Import Include="System.Data.SqlClient" />
+    <Import Include="System.Data.SqlTypes" />
+    <Import Include="System.Deployment" />
+    <Import Include="System.Deployment.Application" />
+    <Import Include="System.Deployment.Internal" />
+    <Import Include="System.Deployment.Internal.CodeSigning" />
+    <Import Include="System.Diagnostics.CodeAnalysis" />
+    <Import Include="System.Diagnostics.Contracts" />
+    <Import Include="System.Diagnostics.Contracts.Internal" />
+    <Import Include="System.Diagnostics.Eventing" />
+    <Import Include="System.Diagnostics.Eventing.Reader" />
+    <Import Include="System.Diagnostics.PerformanceData" />
+    <Import Include="System.Diagnostics.SymbolStore" />
+    <Import Include="System.Diagnostics.Tracing" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing.Configuration" />
+    <Import Include="System.Drawing.Design" />
+    <Import Include="System.Drawing.Drawing2D" />
+    <Import Include="System.Drawing.Imaging" />
+    <Import Include="System.Drawing.Printing" />
+    <Import Include="System.Drawing.Text" />
+    <Import Include="System.Dynamic" />
+    <Import Include="System.Globalization" />
+    <Import Include="System.IO" />
+    <Import Include="System.IO.Compression" />
+    <Import Include="System.IO.IsolatedStorage" />
+    <Import Include="System.IO.Log" />
+    <Import Include="System.IO.MemoryMappedFiles" />
+    <Import Include="System.IO.Pipes" />
+    <Import Include="System.IO.Ports" />
+    <Import Include="System.Linq.Expressions" />
+    <Import Include="System.Management" />
+    <Import Include="System.Management.Instrumentation" />
+    <Import Include="System.Media" />
+    <Import Include="System.Net" />
+    <Import Include="System.Net.Cache" />
+    <Import Include="System.Net.Configuration" />
+    <Import Include="System.Net.Http" />
+    <Import Include="System.Net.Http.Headers" />
+    <Import Include="System.Net.Mail" />
+    <Import Include="System.Net.Mime" />
+    <Import Include="System.Net.NetworkInformation" />
+    <Import Include="System.Net.PeerToPeer" />
+    <Import Include="System.Net.PeerToPeer.Collaboration" />
+    <Import Include="System.Net.Security" />
+    <Import Include="System.Net.Sockets" />
+    <Import Include="System.Net.WebSockets" />
+    <Import Include="System.Numerics" />
+    <Import Include="System.Reflection" />
+    <Import Include="System.Reflection.Emit" />
+    <Import Include="System.Resources" />
+    <Import Include="System.Runtime" />
+    <Import Include="System.Runtime.CompilerServices" />
+    <Import Include="System.Runtime.ConstrainedExecution" />
+    <Import Include="System.Runtime.DesignerServices" />
+    <Import Include="System.Runtime.ExceptionServices" />
+    <Import Include="System.Runtime.Hosting" />
+    <Import Include="System.Runtime.InteropServices" />
+    <Import Include="System.Runtime.InteropServices.ComTypes" />
+    <Import Include="System.Runtime.InteropServices.Expando" />
+    <Import Include="System.Runtime.InteropServices.WindowsRuntime" />
+    <Import Include="System.Security" />
+    <Import Include="System.Security.AccessControl" />
+    <Import Include="System.Security.Authentication" />
+    <Import Include="System.Security.Authentication.ExtendedProtection" />
+    <Import Include="System.Security.Authentication.ExtendedProtection.Configuration" />
+    <Import Include="System.Security.Claims" />
+    <Import Include="System.Security.Cryptography" />
+    <Import Include="System.Security.Cryptography.X509Certificates" />
+    <Import Include="System.Security.Permissions" />
+    <Import Include="System.Security.Policy" />
+    <Import Include="System.Security.Principal" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Threading" />
+    <Import Include="System.Timers" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Compilation" />
+    <Import Include="System.Web.Configuration" />
+    <Import Include="System.Web.Configuration.Internal" />
+    <Import Include="System.Web.Handlers" />
+    <Import Include="System.Web.Hosting" />
+    <Import Include="System.Web.Instrumentation" />
+    <Import Include="System.Web.Mail" />
+    <Import Include="System.Web.Management" />
+    <Import Include="System.Web.ModelBinding" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Security.AntiXss" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.Adapters" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.Adapters" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.Util" />
+    <Import Include="System.Web.WebSockets" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms.ComponentModel" />
+    <Import Include="System.Windows.Forms.ComponentModel.Com2Interop" />
+    <Import Include="System.Windows.Forms.DataVisualization" />
+    <Import Include="System.Windows.Forms.DataVisualization.Charting" />
+    <Import Include="System.Windows.Forms.Design" />
+    <Import Include="System.Windows.Forms.Layout" />
+    <Import Include="System.Windows.Forms.PropertyGridInternal" />
+    <Import Include="System.Windows.Forms.VisualStyles" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Markup" />
+    <Import Include="System.Xml" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Xml.Resolvers" />
+    <Import Include="System.Xml.Schema" />
+    <Import Include="System.Xml.Serialization" />
+    <Import Include="System.Xml.Serialization.Advanced" />
+    <Import Include="System.Xml.Serialization.Configuration" />
+    <Import Include="System.Xml.XmlConfiguration" />
+    <Import Include="System.Xml.XPath" />
+    <Import Include="System.Xml.Xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class_CRMS.vb" />
+    <Compile Include="module_google_drive.vb" />
+    <Compile Include="module_scheduled_tasks.vb" />
+    <Compile Include="module_xl.vb" />
+    <Compile Include="module_db.vb" />
+    <Compile Include="module_crms_logic.vb" />
+    <Compile Include="module_misc.vb" />
+    <Compile Include="module_email.vb" />
+    <Compile Include="module_zip.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="main_form.Designer.vb">
+      <DependentUpon>main_form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main_form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="main_form.resx">
+      <DependentUpon>main_form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\main_form.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DAO">
+      <Guid>{00025E01-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ExcelClientPkgLib">
+      <Guid>{2AEB050F-097F-4969-8E95-685279032F9B}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MDACVer">
+      <Guid>{54AF9343-1923-11D3-9CA4-00C04F72C514}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>50</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CRMS_icon.ico" />
+    <Content Include="nat notes.txt" />
+    <Content Include="Outstanding Items.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

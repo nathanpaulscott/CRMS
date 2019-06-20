@@ -1,0 +1,92 @@
+Use this file to refresh on the tool and the structure of it.  So you can get up to speed more quickly.
+
+Tool Overview
+------------------
+The tool is a CR management tool.  It allows different levels of managers to have visibility and control over the CR process.  
+
+The tool comprises 5 components:
+1) mysql DB => this needs to be setup on the server to be used, its free
+2) the email account => this program communicates through email, so it needs access to a dedicated email account
+3) the xl based CR forms => these are CR forms in XL that have some basic macros inside and are password protected from changing anything but the allowed fields
+4) the ..\CRMS\ windows directory structure that holds the area for the tools working, this is setup on the server
+5) the VB.net code => this is the actual program => this needs to be installed on the same server and have the data for the mysql DB login, the email login, the xl password, the CRMS directory location etc.
+
+NOTE: there is a .csv config file in the ..\CRMS\ directory, the tool will read this on startup and load a bunch of default parameters such as mysql login, email login, xl pasword and many internal parameters
+by using this config file, we can install the same code on different servers for different projects and the differences will be in the config file
+
+There is functionality to update the tool remotely via email after initial setup.
+
+
+Setup
+------------
+To setup the tool, 
+1)
+you need to install mysql and create the database with the required schema, user name, passowrd etc.  
+I have exported the blank DB schema:
+crmsDB 
+...crms_db
+......Tables (18)
+..........antennas (list of allowable antenna types)
+..........cr_common (cr tracker list => one cr per line for tracking purposes)
+..........cr_data_oth (cr details => 1 or more lines per CR)
+..........cr_data_prm (cr details => 1 or more lines per CR)
+..........cr_data_rfb (cr details => 1 or more lines per CR)
+..........cr_obj_2g (cr reason list 2g)
+..........cr_obj_3g (cr reason list 3g)
+..........cr_obj_4g (cr reason list 4g)
+..........cr_types (list cr types and all the lifetime and approval/verification flags for each)
+..........geo (list of regency and province - specifically for indo)
+..........log (tool event log)
+..........node_types (node list and allowed tech for each node)
+..........parameters (list of params - not used)
+..........people (list of people, emails and permissions)
+..........risk (list of risk states)
+..........state_control (list of all states and allowed transitions for each one)
+..........teams (list of optim teams)
+..........tech (list of techs)
+
+2)
+Then you need to setup the CRMS directory structure (actually I think the tool will do that), but at least you need the base.
+...CRMS\
+.....cr
+.....CR Creation Form Store
+.....db
+.....db incoming
+.....db outgoing
+.....GD incoming
+.....GD outgoing
+.....inbox
+.....outbox
+.....processed
+.....sent
+.....site binders
+.....temp
+**the crms_settings.csv file goes in the root directory
+
+3)
+XL needs to be installed, there where some issues with guys not updating their versions of XL.
+NOTE: I am using .xlsb format, so they need min of XL 2007 with service packs updated.
+
+4)
+Then you need to create an install file for the program and install it on the target server
+
+NOTE: you need to have the email server set up (at least the server needs access to the email server via internet or lan), all the ports and settings need to work
+you also need to be able to connect and login to the mysql server => again testing required.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Functionality
+-------------------
+This will describe the tool functionality
+
+NOTE: having a quick look at the tool, it looks very complex and nasty => esspecially the stuff with columns in XL.
+But basically, it regularly connects to the email server, downloads any emails and deletes them on the email server.
+Then it goes through each email and reads the subject and body.  From that it will decide what to do.
+The code for each different action is inside one sub, which is probably a bad idea, as it makes it hard to debug.
+The xl processing module is separate and made of various functions, again, thie is really the messy part.
+The XL part opens the xl forms, checks them, copies the data to the DB and performs and XL formatting for the next section
+There is a periodic action module to run periodic tasks, this is ok
+
+To be honest, the tool is so complex that I could not bare to get back into it again, it is too engulfing, unless I have a purpose, I would not bother with it.
+
+I guess there are a lot of good pieces in there, but I really have no motivation to get into it to point of being able to understand it all and debug it.

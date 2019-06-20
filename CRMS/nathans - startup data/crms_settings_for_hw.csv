@@ -1,0 +1,32 @@
+Start Settings...,
+Timer_check_mail.Interval (ms),1000
+Timer_get_email_timeout_timer.Interval (ms),1000
+Me.TextBox_imap_path.Text,C:\CRMS
+Me.TextBox_check_mail_period.Text,30
+Me.TextBox_cr_status_times.Text,"6,12,18"
+Me.CheckBox_use_imap.Checked,FALSE
+Me.TextBox_imap_server.Text,mspopus.huawei.com
+Me.TextBox_imap_user.Text,tsel_cr@ms.huawei.com
+Me.TextBox_imap_pass.Text,p7-j4#mQ
+Me.TextBox_imap_port.Text,143
+Me.TextBox_imap_encryption_type.Text,3072
+Me.CheckBox_imap_ssl.Checked,FALSE
+Me.TextBox_pop_server.Text,mspopus.huawei.com
+Me.TextBox_pop_user.Text,tsel_cr@ms.huawei.com
+Me.TextBox_pop_pass.Text,p7-j4#mQ
+Me.TextBox_pop_port.Text,110
+Me.CheckBox_pop_use_ssl.Checked,FALSE
+Me.TextBox_smtp_server.Text,mssmtpus.huawei.com
+Me.TextBox_smtp_user.Text,tsel_cr@ms.huawei.com
+Me.TextBox_smtp_pass.Text,p7-j4#mQ
+Me.TextBox_smtp_timeout.Text,60000
+Me.TextBox_smtp_port.Text,25
+Me.CheckBox_smtp_ssl.Checked,FALSE
+Me.TextBox_mysql_server.Text,127.0.0.1
+Me.TextBox_mysql_port.Text,3306
+Me.TextBox_mysql_user.Text,crms_user
+Me.TextBox_mysql_password.Text,nathan
+Me.TextBox_mysql_db.Text,crms_db
+Me.TextBox_GD_clientId.Text,178984549041-c32cqer2tk1g7qt5tulfn5ct93gc73f4.apps.googleusercontent.com
+Me.TextBox_GD_clientsecret.Text,5It9tQP7grGdquWX3J-JxFkH
+Stop Settings...,
