@@ -1,1 +1,4 @@
-*.* linguist-language=""
+# Auto detect text files and perform LF normalization
+* text=auto
+* linguist-vendored
+*.vb linguist-vendored=false
